@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -16,7 +17,7 @@ import { MainPageComponent } from './main-page/main-page.component';
 import { AboutPageComponent } from './about-page/about-page.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { FooterComponent } from './footer/footer.component';
-import { RankPageComponent } from './rank-page/rank-page.component';
+import { RegisterComponent } from './register/register.component';
 
 registerLocaleData(zh);
 
@@ -25,7 +26,8 @@ const routes: Routes = [
   { path: 'home', component: MainPageComponent },
   { path: 'problems', component: ProblemsPageComponent },
   { path: 'about', component: AboutPageComponent},
-  { path: 'ranks', component: RankPageComponent}
+  { path: 'problem', component: SingleProblemPageComponent},
+  { path: 'register', component: RegisterComponent}
 ];
 
 @NgModule({
@@ -37,13 +39,14 @@ const routes: Routes = [
     AboutPageComponent,
     NavigationComponent,
     FooterComponent,
-    RankPageComponent
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpClientModule,
     NgZorroAntdModule,
     RouterModule.forRoot(routes)

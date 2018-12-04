@@ -1,0 +1,40 @@
+<div class="regd">
+  <div class="regd">
+    <div class="regd regd1">
+      <div>
+        <p class="regp">欢迎加入我们</p>
+        <hr>
+          <form [formGroup]="myForm" (ngSubmit)="onSubmit(myForm.value)" class="regform">
+            <div class="regd2">
+              <div class="regd3">
+                <div class="regd4">
+                  <label for="nameinput">昵称:</label>
+                </div>
+                <input nz-input type="text"  class="regipt" id="nameinput" placeholder="x-x个字符" [formControl]="myForm.controls['name']">
+              </div>
+              <div class="regd3">
+                <div class="regd4">
+                  <label for="pwdinput">密码:</label>
+                </div>
+                <input nz-input type="text"  class="regipt" id="pwdinput" placeholder="x-x位" [formControl]="myForm.controls['password']">
+              </div>
+              <div class="regd3"> 
+                <div class="regd4">
+                  <label for="repwdinput">确认密码:</label>
+                </div>
+                <input nz-input type="text"  class="regipt" id="repwdinput" placeholder="x-x位" [formControl]="myForm.controls['repassword']">
+              </div>
+              <div class="regd3">
+                <div class="regd4">
+                  <label for="mailinput">邮箱:</label>
+                </div>
+                <input nz-input type="text"  class="regipt" id="mailinput" placeholder="@" [formControl]="myForm.controls['mail']">
+              </div>
+            </div>
+            <button nz-button type="submit" class="regbtn">注册</button>
+          </form>
+        <hr>
+      </div>
+    </div>
+  </div>
+</div>
