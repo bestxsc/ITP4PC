@@ -1,3 +1,35 @@
-<h1>
-  problems-page works!
-</h1>
+<div class="content">
+  <div class="article">
+    <div class="flex-column" nz-row>
+      <div class="artticle-continer" nz-col nzSpan="24">
+        <div nz-row>
+          <div class="header2" nz-col [nzSpan]="18">
+            <h1>卷库</h1>
+          </div>
+          <div class="nav-right-search right" nz-col [nzXs]="0" [nzSm]="0" [nzMd]="0" [nzLg]="6">
+            <input nz-input placeholder="搜索" nzSize="large">
+          </div>
+        </div>
+        <div class="shodow-1">
+          <div class="h3-title" *ngFor="let Module of Modules1">
+            <div class="h3-bg">
+              <h2>{{ Module.title }}</h2>
+            </div>
+            <nz-card [nzBordered]="true" [nzHoverable]="true" *ngFor="let article of Module.Articles">
+              <div nz-row>
+                <div nz-col [nzSpan]="18">
+                  <a href="{{ article.href }}">
+                    <h2>{{ article.title }}</h2>
+                    <p>{{ article.content }}</p>
+                  </a>
+                </div>
+                <div class="tag" nz-col>
+                </div>
+              </div>
+            </nz-card>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

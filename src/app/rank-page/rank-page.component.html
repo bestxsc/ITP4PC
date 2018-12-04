@@ -1,0 +1,36 @@
+<div class="content">
+  <div class="article">
+    <div class="flex-column" nz-row>
+      <div class="artticle-continer" nz-col nzSpan="24">
+        <div nz-row>
+          <div class="header2" nz-col [nzSpan]="18">
+            <h1>排名</h1>
+          </div>
+          <div class="nav-right-search right" nz-col [nzXs]="0" [nzSm]="0" [nzMd]="0" [nzLg]="6">
+            <input nz-input placeholder="搜索" nzSize="large">
+          </div>
+        </div>
+        <div>
+          <nz-table #basicTable [nzData]="dataSet">
+            <thead>
+            <tr>
+              <th>排名</th>
+              <th>用户名</th>
+              <th>总分</th>
+              <th>完成题数</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let data of basicTable.data">
+              <td>{{data.rank}}</td>
+              <td>{{data.name}}</td>
+              <td>{{data.total}}</td>
+              <td>{{data.solved}}</td>
+            </tr>
+            </tbody>
+          </nz-table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

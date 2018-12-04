@@ -1,0 +1,20 @@
+.nav-menu {
+  background-color: #001529;
+  line-height: 60px;
+}
+
+.ant-menu{
+  background: none;
+}
+
+.ant-menu-horizontal {
+  border-bottom: 0;
+}
+
+.item {
+  color: white !important;
+}
+
+/*
+#1890ff
+*/

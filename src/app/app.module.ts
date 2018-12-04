@@ -16,6 +16,7 @@ import { MainPageComponent } from './main-page/main-page.component';
 import { AboutPageComponent } from './about-page/about-page.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { FooterComponent } from './footer/footer.component';
+import { RankPageComponent } from './rank-page/rank-page.component';
 
 registerLocaleData(zh);
 
@@ -24,7 +25,7 @@ const routes: Routes = [
   { path: 'home', component: MainPageComponent },
   { path: 'problems', component: ProblemsPageComponent },
   { path: 'about', component: AboutPageComponent},
-  { path: 'problem', component: SingleProblemPageComponent}
+  { path: 'ranks', component: RankPageComponent}
 ];
 
 @NgModule({
@@ -35,7 +36,8 @@ const routes: Routes = [
     MainPageComponent,
     AboutPageComponent,
     NavigationComponent,
-    FooterComponent
+    FooterComponent,
+    RankPageComponent
   ],
   imports: [
     BrowserModule,
