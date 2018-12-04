@@ -10,35 +10,35 @@ export class ProblemsPageComponent implements OnInit {
   Modules1: Module [];
   Articles01: Article [] = [
     new Article('树形结构模拟卷1',
-      '000',
+      '作者：XXX 难度：4',
       '#',
-      100)
+      '100')
   ];
   Articles02: Article [] = [
     new Article('图形结构模拟卷1',
-      '999',
+      '作者：XXX 难度：4',
       '#',
-      75),
+      '75'),
   ];
   Articles03: Article [] = [
     new Article('散列表模拟卷1',
-      '888',
+      '作者：XXX 难度：4',
       '#',
-      50),
+      '50'),
     new Article('散列表模拟卷2',
-      '777',
+      '作者：XXX 难度：4',
       '#',
-      25)
+      '25')
   ];
   Articles04: Article [] = [
     new Article('搜索模拟卷1',
-      '111',
+      '作者：XXX 难度：4',
       '#',
-      0),
+      '0'),
     new Article('搜索模拟卷2',
-      '222',
+      '作者：XXX 难度：4',
       '#',
-      0)
+      '0')
   ];
 
   constructor() {

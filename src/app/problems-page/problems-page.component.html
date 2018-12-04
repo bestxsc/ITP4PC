@@ -24,6 +24,11 @@
                   </a>
                 </div>
                 <div class="tag" nz-col>
+                  <nz-tag *ngIf="article.compelete=='100'" [nzColor]="'#87d068'">100%</nz-tag>
+                  <nz-tag *ngIf="article.compelete=='75'" [nzColor]="'#108ee9'">75%</nz-tag>
+                  <nz-tag *ngIf="article.compelete=='50'" [nzColor]="'#FF9966'">50%</nz-tag>
+                  <nz-tag *ngIf="article.compelete=='25'" [nzColor]="'#FFCC00'">25%</nz-tag>
+                  <nz-tag *ngIf="article.compelete=='0'" [nzColor]="'#f50'">0%</nz-tag>
                 </div>
               </div>
             </nz-card>
