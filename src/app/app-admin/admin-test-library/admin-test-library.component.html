@@ -1,0 +1,51 @@
+<div class="content">
+  <div class="header">
+    <div class="search-frame">
+      <nz-input-group nzSearch [nzSuffix]="suffixIconButton">
+        <input type="text" nz-input placeholder="搜索...">
+      </nz-input-group>
+      <ng-template #suffixIconButton>
+        <button nz-button nzType="primary" nzSearch><i nz-icon type="search"></i></button>
+      </ng-template>
+    </div>
+    <div class="app-button">
+      <button nz-button nzType="primary" [nzSize]="size"><i nz-icon type="plus" theme="outline"></i>添加题目</button>
+    </div>
+  </div>
+  <div>
+    <nz-divider nzDashed [nzText]="text">
+      <ng-template #text><i nz-icon type="align-center" theme="outline"></i>题目</ng-template>
+    </nz-divider>
+  </div>
+  <div class="cards">
+    <div class="card">
+      <nz-card nzTitle="第二道题" [nzExtra]="extraTemplate">
+        <p>小明和小红不啦不啦不啦不啦的反正就是不啦不啦不啦的</p>
+      </nz-card>
+      <ng-template #extraTemplate>
+        <button nz-button [nzSize]="size" nzType="default">编辑</button>
+        <button nz-button [nzSize]="size" nzType="danger">删除</button>
+      </ng-template>
+    </div>
+
+    <div class="card">
+      <nz-card nzTitle="第三道题" [nzExtra]="extraTemplate">
+        <p>小明和小红不啦不啦不啦不啦的反正就是不啦不啦不啦的</p>
+      </nz-card>
+      <ng-template #extraTemplate>
+        <button nz-button [nzSize]="size" nzType="default">编辑</button>
+        <button nz-button [nzSize]="size" nzType="danger">删除</button>
+      </ng-template>
+    </div>
+
+    <div class="card">
+      <nz-card nzTitle="第一道题" [nzExtra]="extraTemplate">
+        <p>小明和小红不啦不啦不啦不啦的反正就是不啦不啦不啦的</p>
+      </nz-card>
+      <ng-template #extraTemplate>
+        <button nz-button [nzSize]="size" nzType="default">编辑</button>
+        <button nz-button [nzSize]="size" nzType="danger">删除</button>
+      </ng-template>
+    </div>
+  </div>
+</div>
