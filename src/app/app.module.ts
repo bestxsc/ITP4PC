@@ -18,6 +18,7 @@ import { AboutPageComponent } from './about-page/about-page.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { FooterComponent } from './footer/footer.component';
 import { RegisterComponent } from './register/register.component';
+import { LoginComponent } from './login/login.component';
 import { RankPageComponent } from './rank-page/rank-page.component';
 import { AdminComponent } from './admin/admin.component';
 
@@ -30,6 +31,7 @@ import {AdminClassManagementComponent} from './app-admin/admin-class-management/
 import {AdminTestComponent} from './app-admin/admin-test/admin-test.component';
 
 
+
 registerLocaleData(zh);
 
 const routes: Routes = [
@@ -40,6 +42,7 @@ const routes: Routes = [
   { path: 'about', component: AboutPageComponent},
   { path: 'problem', component: SingleProblemPageComponent},
   { path: 'register', component: RegisterComponent},
+  { path: 'login', component: LoginComponent},
 
 
   // admin
@@ -82,6 +85,7 @@ const routes: Routes = [
     AdminPersonalSafeComponent,
     AdminClassManagementComponent,
     AdminTestComponent,
+    LoginComponent,
 
 
   ],

@@ -3,7 +3,7 @@ label,span{
     display:inline-block;
  }
 
-.regd{
+.logd{
 
     box-sizing: border-box;
     padding-top: 3rem;
@@ -13,7 +13,7 @@ label,span{
     justify-content:center;
 }
 
-.regd1{
+.logd1{
     box-shadow: 
     0 2px 3px hsla(0,0%,4%,.1), 
     0 0 0 1px hsla(0,0%,4%,.1);
@@ -26,19 +26,19 @@ label,span{
     margin:0 auto
 }
 
-.regd3{
+.logd3{
     display: flex;
     padding-bottom: 1.5rem;
 }
 
-.regd4{
+.logd4{
     text-align: right;
     margin-right: 1.5rem;
     display: inline;
     font-size: 1.25rem;
 }
 
-.regp{
+.logp{
     font-size: 1.5rem;
 }
 hr{
@@ -53,7 +53,7 @@ hr{
     margin-left: 0px;
 }
 
-.regbtn{
+.logbtn{
     display:block;
     margin:0 auto;
     border-radius: 48px;

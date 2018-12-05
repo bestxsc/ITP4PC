@@ -1,0 +1,28 @@
+<div class="logd">
+  <div class="logd">
+    <div class="logd logd1">
+      <div>
+        <p class="logp">欢迎回来</p>
+        <hr>
+          <form [formGroup]="LoginForm" (ngSubmit)="onSubmit(LoginForm.value)" class="logform">
+            <div class="logd2">
+              <div class="logd3">
+                <div class="logd4">
+                  <label for="nameinput1">账号:</label>
+                </div>
+                <input nz-input type="text"  class="logipt" id="nameinput1" placeholder="昵称/邮箱" [formControl]="LoginForm.controls['name']">
+              </div>
+              <div class="logd3">
+                <div class="logd4">
+                  <label for="pwdinput1">密码:</label>
+                </div>
+                <input nz-input type="text"  class="logipt" id="pwdinput1" placeholder="x-x位" [formControl]="LoginForm.controls['password']">
+              </div>
+            <button nz-button type="submit" class="logbtn btnsd">登陆</button>
+          </div>
+          </form>
+        <hr>
+      </div>
+    </div>
+  </div>
+</div>

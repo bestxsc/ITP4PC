@@ -17,7 +17,7 @@ export class RegisterComponent implements OnInit {
       'repassword':[''],
       'mail':['']
     })
-   }
+  }
   ngOnInit() {
   }
 
