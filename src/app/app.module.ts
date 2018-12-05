@@ -17,6 +17,12 @@ import { AboutPageComponent } from './about-page/about-page.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { FooterComponent } from './footer/footer.component';
 import { RankPageComponent } from './rank-page/rank-page.component';
+import { AdminComponent } from './admin/admin.component';
+import { AdminMainPageComponent } from './admin/admin-main-page/admin-main-page.component';
+import { AdminClassManagementComponent } from './admin/admin-class-management/admin-class-management.component';
+import { AdminPersonalDataComponent } from './admin/admin-personal-data/admin-personal-data.component';
+import { AdminTestComponent } from './admin/admin-test/admin-test.component';
+import { AdminTestLibraryComponent } from './admin/admin-test-library/admin-test-library.component';
 
 registerLocaleData(zh);
 
@@ -37,7 +43,13 @@ const routes: Routes = [
     AboutPageComponent,
     NavigationComponent,
     FooterComponent,
-    RankPageComponent
+    RankPageComponent,
+    AdminComponent,
+    AdminMainPageComponent,
+    AdminClassManagementComponent,
+    AdminPersonalDataComponent,
+    AdminTestComponent,
+    AdminTestLibraryComponent
   ],
   imports: [
     BrowserModule,
