@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./admin-test-library.component.css']
 })
 export class AdminTestLibraryComponent implements OnInit {
-
+  size = 'large';
   constructor() { }
 
   ngOnInit() {

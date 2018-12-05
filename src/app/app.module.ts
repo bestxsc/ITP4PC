@@ -20,6 +20,8 @@ import { FooterComponent } from './footer/footer.component';
 import { AdminMainPageComponent } from './app-admin/admin-main-page/admin-main-page.component';
 import {AdminTestLibraryComponent} from './app-admin/admin-test-library/admin-test-library.component';
 import {AdminPersonalDataComponent} from './app-admin/admin-personal-data/admin-personal-data.component';
+import {AdminPersonalComponent} from './app-admin/admin-personal-data/admin-personal-data.component';
+import {AdminPersonalSafeComponent} from './app-admin/admin-personal-data/admin-personal-data.component';
 import {AdminClassManagementComponent} from './app-admin/admin-class-management/admin-class-management.component';
 import {AdminTestComponent} from './app-admin/admin-test/admin-test.component';
 
@@ -36,9 +38,12 @@ const routes: Routes = [
   // admin
   {path: 'admin-main-page', component: AdminMainPageComponent, children : [
       {path: 'admin-test-library', component: AdminTestLibraryComponent},
-      {path: 'admin-personal-data', component: AdminPersonalDataComponent},
       {path: 'admin-class-management', component: AdminClassManagementComponent},
-      {path: 'admin-test', component: AdminTestComponent}
+      {path: 'admin-test', component: AdminTestComponent},
+      {path: 'admin-personal-data', component: AdminPersonalDataComponent, children: [
+          {path: 'admin-personal-data-1', component: AdminPersonalComponent},
+          {path: 'admin-personal-data-2', component: AdminPersonalSafeComponent}
+        ]},
     ]
   }
 
@@ -56,8 +61,11 @@ const routes: Routes = [
     AdminMainPageComponent,
     AdminTestLibraryComponent,
     AdminPersonalDataComponent,
+    AdminPersonalComponent,
+    AdminPersonalSafeComponent,
     AdminClassManagementComponent,
     AdminTestComponent,
+
   ],
   imports: [
     BrowserModule,
