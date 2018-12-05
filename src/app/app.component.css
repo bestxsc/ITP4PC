@@ -1,0 +1,6 @@
+#self-header{
+  box-shadow: 0 2px 8px #001529;
+  position: relative;
+  z-index: 10;
+  max-width: 100%;
+}

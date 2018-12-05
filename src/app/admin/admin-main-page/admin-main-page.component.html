@@ -1,43 +1,47 @@
-<nz-layout>
-  <nz-sider nzCollapsible [(nzCollapsed)]="isCollapsed" [nzTrigger]="triggerTemplate">
-    <div class="logo">
-    </div>
-    <ul nz-menu [nzTheme]="'dark'" [nzMode]="'inline'" [nzInlineCollapsed]="isCollapsed">
-
-      <a [routerLink]="['admin-test-library']">
-        <li nz-menu-item><span><i nz-icon type="book"></i><span class="nav-text">题库</span></span></li>
-      </a>
-
-      <a [routerLink]="['admin-test']">
-        <li nz-menu-item><span><i nz-icon type="clock-circle"></i><span class="nav-text">测试</span></span></li>
-      </a>
-
-      <a [routerLink]="['admin-class-management']">
-        <li nz-menu-item><span><i nz-icon type="team"></i><span class="nav-text">班里管理</span></span></li>
-      </a>
-
-      <a [routerLink]="['admin-personal-data']">
-        <li nz-menu-item><span><i nz-icon type="setting"></i><span class="nav-text">个人资料</span></span></li>
-      </a>
-
-      <a [routerLink]="['']">
-        <li nz-menu-item><span><i nz-icon type="logout"></i><span class="nav-text">登出</span></span></li>
-      </a>
-
-    </ul>
-  </nz-sider>
-  <nz-layout>
-    <nz-header style="background: #fff; padding:0;">
-      <i class="trigger" nz-icon [type]="isCollapsed?'menu-unfold':'menu-fold'" (click)="isCollapsed=!isCollapsed"></i>
-    </nz-header>
-    <nz-content style="margin:0 16px;">
-      <div style="padding:24px; background: #fff; min-height: 360px;">
-        <router-outlet></router-outlet>
+<div class="self-layout">
+  <nz-layout class="ant-layout">
+    <nz-sider nzCollapsible [(nzCollapsed)]="isCollapsed" [nzTrigger]="triggerTemplate">
+      <div class="logo">
       </div>
-    </nz-content>
-    <nz-footer style="text-align: center;">Admin Page</nz-footer>
+      <ul nz-menu [nzTheme]="'light'" [nzMode]="'inline'" [nzInlineCollapsed]="isCollapsed">
+
+        <a [routerLink]="['admin-test-library']">
+          <li nz-menu-item><span><i nz-icon type="book"></i><span class="nav-text">题库</span></span></li>
+        </a>
+
+        <a [routerLink]="['admin-test']">
+          <li nz-menu-item><span><i nz-icon type="clock-circle"></i><span class="nav-text">测试</span></span></li>
+        </a>
+
+        <a [routerLink]="['admin-class-management']">
+          <li nz-menu-item><span><i nz-icon type="team"></i><span class="nav-text">班里管理</span></span></li>
+        </a>
+
+        <a [routerLink]="['admin-personal-data']">
+          <li nz-menu-item><span><i nz-icon type="setting"></i><span class="nav-text">个人资料</span></span></li>
+        </a>
+
+        <a [routerLink]="['#####']">
+          <li nz-menu-item><span><i nz-icon type="logout"></i><span class="nav-text">登出</span></span></li>
+        </a>
+
+      </ul>
+    </nz-sider>
+    <nz-layout>
+
+      <nz-header style="background: #fff; padding:0;">
+        <i class="trigger" nz-icon [type]="isCollapsed?'menu-unfold':'menu-fold'" (click)="isCollapsed=!isCollapsed"></i>
+      </nz-header>
+
+      <nz-content style="margin:0 16px;">
+        <div style="padding:24px; background: #fff; min-height: 360px;">
+          <router-outlet></router-outlet>
+        </div>
+      </nz-content>
+      <nz-footer style="text-align: center;">Admin Page</nz-footer>
+    </nz-layout>
   </nz-layout>
-</nz-layout>
-<ng-template #trigger>
-  <i nz-icon type="up"></i>
-</ng-template>
+  <ng-template #trigger>
+    <i nz-icon type="up"></i>
+  </ng-template>
+</div>

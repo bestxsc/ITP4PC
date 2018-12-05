@@ -1,44 +1,34 @@
-<nz-layout>
+<nz-layout style="padding: 20px 0; background-color: white">
 
-  <nz-sider nzCollapsible [(nzCollapsed)]="isCollapsed" [nzTrigger]="triggerTemplate">
+  <nz-sider nzCollapsible [(nzCollapsed)]="isCollapsed" [nzTrigger]="triggerTemplate" style="background-color: white">
     <button nz-button [nzType]="'primary'" (click)="toggleCollapsed()" style="margin-bottom: 10px; ;">
       <i nz-icon [type]="isCollapsed?'menu-unfold':'menu-fold'"></i>
     </button>
     <ul nz-menu [nzTheme]="'light'" [nzMode]="'inline'" [nzInlineCollapsed]="isCollapsed">
-
       <a [routerLink]="['admin-test-library']">
         <li nz-menu-item><span><i nz-icon type="book"></i><span class="nav-text">题库</span></span></li>
       </a>
-
       <a [routerLink]="['admin-test']">
         <li nz-menu-item><span><i nz-icon type="clock-circle"></i><span class="nav-text">测试</span></span></li>
       </a>
-
       <a [routerLink]="['admin-class-management']">
         <li nz-menu-item><span><i nz-icon type="team"></i><span class="nav-text">班里管理</span></span></li>
       </a>
-
       <a [routerLink]="['admin-personal-data']">
         <li nz-menu-item><span><i nz-icon type="setting"></i><span class="nav-text">个人资料</span></span></li>
       </a>
-
       <a [routerLink]="['']">
         <li nz-menu-item><span><i nz-icon type="logout"></i><span class="nav-text">登出</span></span></li>
       </a>
-
     </ul>
   </nz-sider>
-  <nz-layout>
 
+    <nz-content style="background-color: white">
+      <router-outlet></router-outlet>
+    </nz-content>
 
-        <router-outlet></router-outlet>
-
-    <nz-footer style="text-align: center;">
-      Admin Page
-    </nz-footer>
-
-  </nz-layout>
 </nz-layout>
+
 <ng-template #trigger>
   <i nz-icon type="up"></i>
 </ng-template>

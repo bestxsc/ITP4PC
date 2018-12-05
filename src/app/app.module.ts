@@ -29,7 +29,7 @@ import {AdminPersonalComponent} from './app-admin/admin-personal-data/admin-pers
 import {AdminPersonalSafeComponent} from './app-admin/admin-personal-data/admin-personal-data.component';
 import {AdminClassManagementComponent} from './app-admin/admin-class-management/admin-class-management.component';
 import {AdminTestComponent} from './app-admin/admin-test/admin-test.component';
-
+import {AdminCreateClassComponent} from './app-admin/admin-class-management/admin-class-management.component';
 
 
 registerLocaleData(zh);
@@ -48,7 +48,9 @@ const routes: Routes = [
   // admin
   {path: 'admin-main-page', component: AdminMainPageComponent, children : [
       {path: 'admin-test-library', component: AdminTestLibraryComponent},
-      {path: 'admin-class-management', component: AdminClassManagementComponent},
+      {path: 'admin-class-management', component: AdminClassManagementComponent, children: [
+          {path: 'admin-create-class', component: AdminCreateClassComponent},
+        ]},
       {path: 'admin-test', component: AdminTestComponent},
       {path: 'admin-personal-data', component: AdminPersonalDataComponent, children: [
           {path: 'admin-personal-data-1', component: AdminPersonalComponent},
@@ -85,6 +87,7 @@ const routes: Routes = [
     AdminPersonalSafeComponent,
     AdminClassManagementComponent,
     AdminTestComponent,
+    AdminCreateClassComponent,
     LoginComponent,
 
 

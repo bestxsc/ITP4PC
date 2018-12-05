@@ -1,3 +1,14 @@
-<p>
-  admin-class-management works!
-</p>
+<nz-layout class="self-nz-layout">
+  <nz-content>
+
+    <div class="app-button">
+      <app-admin-create-class></app-admin-create-class>
+    </div>
+
+    <nz-divider nzDashed [nzText]="text">
+      <ng-template #text><i nz-icon type="team" theme="outline"></i>班级</ng-template>
+    </nz-divider>
+
+
+  </nz-content>
+</nz-layout>

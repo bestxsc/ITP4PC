@@ -1,5 +1,8 @@
 <nz-layout>
   <nz-header>
+    <nz-divider nzDashed [nzText]="text">
+      <ng-template #text><i nz-icon type="align-center" theme="outline"></i>个人资料</ng-template>
+    </nz-divider>
     <div nz-row >
         <div nz-col nzSpan="5">
           <ul nz-menu [nzMode]="'horizontal'">
@@ -15,12 +18,10 @@
       </div>
   </nz-header>
 
-
   <nz-content>
-    <nz-content style="padding:0 50px;">
+    <nz-content style="padding:50px 50px;">
       <router-outlet></router-outlet>
     </nz-content>
   </nz-content>
 
-  <nz-footer>Footer</nz-footer>
 </nz-layout>
