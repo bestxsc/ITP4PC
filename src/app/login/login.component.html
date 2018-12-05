@@ -16,10 +16,16 @@
                 <div class="logd4">
                   <label for="pwdinput1">密码:</label>
                 </div>
-                <input nz-input type="text"  class="logipt" id="pwdinput1" placeholder="x-x位" [formControl]="LoginForm.controls['password']">
+                <input nz-input type="password"  class="logipt" id="pwdinput1" placeholder="x-x位" [formControl]="LoginForm.controls['password']">
               </div>
-            <button nz-button type="submit" class="logbtn btnsd">登陆</button>
-          </div>
+              <div class="logd5">
+                <button nz-button type="submit" class="logbtn btnsd">登陆</button>
+                <a href="#">
+                  <button nz-button class="logbtn btnsd">注册</button>
+                </a>
+              </div>
+            
+            </div>
           </form>
         <hr>
       </div>

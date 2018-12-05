@@ -26,9 +26,13 @@ label,span{
     margin:0 auto
 }
 
+.logd2{
+    padding-right: 3rem;
+}
 .logd3{
     display: flex;
     padding-bottom: 1.5rem;
+    padding-top: 1.5rem;
 }
 
 .logd4{
@@ -38,6 +42,10 @@ label,span{
     font-size: 1.25rem;
 }
 
+.logd5{
+    display: flex;
+    padding-top: 1.5rem;
+}
 .logp{
     font-size: 1.5rem;
 }
@@ -58,7 +66,7 @@ hr{
     margin:0 auto;
     border-radius: 48px;
     min-width: 120px;
-    background-color: #e7eaec;
+    background-color: #c5c7c8;
 }
 
 .btnsd:hover{
