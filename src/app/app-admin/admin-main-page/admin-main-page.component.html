@@ -1,8 +1,10 @@
 <nz-layout>
+
   <nz-sider nzCollapsible [(nzCollapsed)]="isCollapsed" [nzTrigger]="triggerTemplate">
-    <div class="logo">
-    </div>
-    <ul nz-menu [nzTheme]="'dark'" [nzMode]="'inline'" [nzInlineCollapsed]="isCollapsed">
+    <button nz-button [nzType]="'primary'" (click)="toggleCollapsed()" style="margin-bottom: 10px; ;">
+      <i nz-icon [type]="isCollapsed?'menu-unfold':'menu-fold'"></i>
+    </button>
+    <ul nz-menu [nzTheme]="'light'" [nzMode]="'inline'" [nzInlineCollapsed]="isCollapsed">
 
       <a [routerLink]="['admin-test-library']">
         <li nz-menu-item><span><i nz-icon type="book"></i><span class="nav-text">题库</span></span></li>
@@ -27,9 +29,7 @@
     </ul>
   </nz-sider>
   <nz-layout>
-    <nz-header style="background: #fff; padding:0;">
-      <i class="trigger" nz-icon [type]="isCollapsed?'menu-unfold':'menu-fold'" (click)="isCollapsed=!isCollapsed"></i>
-    </nz-header>
+
 
         <router-outlet></router-outlet>
 
