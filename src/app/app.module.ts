@@ -31,6 +31,7 @@ import {AdminClassManagementComponent} from './app-admin/admin-class-management/
 import {AdminTestComponent} from './app-admin/admin-test/admin-test.component';
 import {AdminCreateClassComponent} from './app-admin/admin-class-management/admin-class-management.component';
 import { TextPageComponent } from './text-page/text-page.component';
+import { SingleSelectQuestionComponent } from './single-select-question/single-select-question.component';
 
 
 registerLocaleData(zh);
@@ -92,6 +93,7 @@ const routes: Routes = [
     AdminCreateClassComponent,
     LoginComponent,
     TextPageComponent,
+    SingleSelectQuestionComponent,
 
 
   ],
