@@ -1,14 +1,14 @@
 
   <button nz-button nzType="primary" [nzSize]="size" (click)="open()"><i nz-icon type="plus" theme="outline"></i>创建班级</button>
 
-  <nz-drawer [nzBodyStyle]="{ height: 'calc(100% - 55px)', overflow: 'auto', 'padding-bottom':'53px' }"[nzMaskClosable]="false" [nzWidth]="720" [nzVisible]="visible" nzTitle="Create" (nzOnClose)="close()">
+  <nz-drawer [nzBodyStyle]="{ height: 'calc(100% - 55px)', overflow: 'auto', 'padding-bottom':'53px' }"[nzMaskClosable]="false" [nzWidth]="720" [nzVisible]="visible" nzTitle="创建" (nzOnClose)="close()">
     <form nz-form>
       <div nz-row nzGutter="8">
         <div nz-col nzSpan="12">
           <nz-form-item>
             <nz-form-label>班级名称</nz-form-label>
             <nz-form-control>
-              <input nz-input placeholder="please enter user name">
+              <input nz-input placeholder="请输入班级名称">
             </nz-form-control>
           </nz-form-item>
         </div>
@@ -18,9 +18,9 @@
 
         <div nz-col nzSpan="12">
           <nz-form-item>
-            <nz-form-label>Type</nz-form-label>
+            <nz-form-label>科目</nz-form-label>
             <nz-form-control>
-              <nz-select nzPlaceHolder="Please choose the type"></nz-select>
+              <nz-select nzPlaceHolder="请输入班级科目类型"></nz-select>
             </nz-form-control>
           </nz-form-item>
         </div>
@@ -36,7 +36,7 @@
         </div>
         <div nz-col nzSpan="12">
           <nz-form-item>
-            <nz-form-label>DateTime</nz-form-label>
+            <nz-form-label>时间</nz-form-label>
             <nz-form-control>
               <nz-range-picker></nz-range-picker>
             </nz-form-control>
@@ -46,9 +46,9 @@
       <div nz-row nzGutter="8">
         <div nz-col nzSpan="24">
           <nz-form-item>
-            <nz-form-label>Description</nz-form-label>
+            <nz-form-label>描述</nz-form-label>
             <nz-form-control>
-              <textarea nz-input placeholder="please enter url description" [nzAutosize]="{ minRows: 4, maxRows: 4 }"></textarea>
+              <textarea nz-input placeholder="请输入班级描述" [nzAutosize]="{ minRows: 4, maxRows: 4 }"></textarea>
             </nz-form-control>
           </nz-form-item>
         </div>

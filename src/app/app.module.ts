@@ -30,7 +30,8 @@ import {AdminPersonalSafeComponent} from './app-admin/admin-personal-data/admin-
 import {AdminClassManagementComponent} from './app-admin/admin-class-management/admin-class-management.component';
 import {AdminTestComponent} from './app-admin/admin-test/admin-test.component';
 import {AdminCreateClassComponent} from './app-admin/admin-class-management/admin-class-management.component';
-
+import {AdminDisplayClassComponent} from './app-admin/admin-class-management/admin-class-management.component';
+import {AdminClassInfoComponent} from './app-admin/admin-class-management/admin-class-management.component';
 
 registerLocaleData(zh);
 
@@ -74,11 +75,7 @@ const routes: Routes = [
     RegisterComponent,
     RankPageComponent,
     AdminComponent,
-    AdminMainPageComponent,
-    AdminClassManagementComponent,
-    AdminPersonalDataComponent,
-    AdminTestComponent,
-    AdminTestLibraryComponent,
+
 
     AdminMainPageComponent,
     AdminTestLibraryComponent,
@@ -88,6 +85,8 @@ const routes: Routes = [
     AdminClassManagementComponent,
     AdminTestComponent,
     AdminCreateClassComponent,
+    AdminDisplayClassComponent,
+    AdminClassInfoComponent,
     LoginComponent,
 
 
