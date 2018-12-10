@@ -1,0 +1,12 @@
+<nz-card [nzBordered]="true" [nzHoverable]="true">
+  <div class="question">
+    <h2>{{question}}</h2>
+  </div>
+  <nz-radio-group [(ngModel)]="radioValue">
+      <label nz-radio [ngStyle]="style" nzValue="A">{{answers[0]}}</label>
+      <label nz-radio [ngStyle]="style" nzValue="B">{{answers[1]}}</label>
+      <label nz-radio [ngStyle]="style" nzValue="C">{{answers[2]}}</label>
+      <label nz-radio [ngStyle]="style" nzValue="D">{{answers[3]}}</label>
+  </nz-radio-group>
+</nz-card>
+

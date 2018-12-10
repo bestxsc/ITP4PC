@@ -1,0 +1,35 @@
+<div class="txd"> 
+  <div class="txd1" nz-row>
+    <div class="header2">
+      <h1>测试</h1>
+    </div>
+    <div class="nav-right-search right" nz-col [nzXs]="0" [nzSm]="0" [nzMd]="0" [nzLg]="6">
+      <nz-input-group nzSearch [nzSuffix]="suffixIconButton">
+        <input type="text" nz-input placeholder="搜索">
+      </nz-input-group>
+      <ng-template #suffixIconButton>
+        <button nz-button nzType="primary" nzSearch><i nz-icon type="search"></i></button>
+      </ng-template>
+    </div>
+  </div>
+  <nz-card style="width: 100%;">
+    <nz-card-tab>
+      <nz-tabset nzSize="large" [(nzSelectedIndex)]="index">
+        <nz-tab nzTitle="进行中"></nz-tab>
+        <nz-tab nzTitle="未进行"></nz-tab>
+        <nz-tab nzTitle="已进行"></nz-tab>
+      </nz-tabset>
+    </nz-card-tab>
+    <div class="txd2" *ngFor="let tArticle of TArticle">
+      <div nz-col [nzSpan]="18">
+        <nz-card *ngIf="tArticle.state==index" [nzBordered]="true" [nzHoverable]="true">
+          <a href="{{ tArticle.href }}">
+            <h2>{{ tArticle.title }}</h2>
+            <p>{{ tArticle.content }}</p>
+          </a>
+        </nz-card>
+      </div>
+    </div>
+  </nz-card>
+</div>
+ 
