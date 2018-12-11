@@ -36,6 +36,7 @@ import {AdminClassInfoComponent} from './app-admin/admin-class-management/admin-
 
 import { TextPageComponent } from './text-page/text-page.component';
 import { SingleSelectQuestionComponent } from './single-select-question/single-select-question.component';
+import { SingleJudgeQuestionComponent } from './single-judge-question/single-judge-question.component';
 
 
 
@@ -51,6 +52,7 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent},
   { path: 'login', component: LoginComponent},
   { path: 'text', component: TextPageComponent},
+  { path: 'sproblem', component: SingleProblemPageComponent},
 
 
   // admin
@@ -97,6 +99,7 @@ const routes: Routes = [
     LoginComponent,
     TextPageComponent,
     SingleSelectQuestionComponent,
+    SingleJudgeQuestionComponent,
 
 
   ],
