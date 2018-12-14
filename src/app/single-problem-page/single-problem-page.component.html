@@ -27,17 +27,17 @@
       </div>
       <div *ngIf="index==2">
         <div *ngFor="let programProblem of programProblems">
-          <nz-card [nzBordered]="true" [nzHoverable]="true">
-            <div class="txd2">
-              <a href="{{ programProblem.href }}">
+          <a href="{{ programProblem.href }}">
+            <nz-card [nzBordered]="true" [nzHoverable]="true">
+              <div class="txd2">
                 <h2>{{ programProblem.title }}</h2>
                 <p>{{ programProblem.content }}</p>
-              </a>
-            </div>
-            <div class="tag" nz-col>
-              <nz-tag [nzColor]="'#84B2B4'">{{programProblem.score}}分</nz-tag>
-            </div>
-          </nz-card>
+              </div>
+              <div class="tag" nz-col>
+                <nz-tag [nzColor]="'#84B2B4'">{{programProblem.score}}分</nz-tag>
+              </div>
+            </nz-card>
+          </a>
         </div>
       </div>
     </nz-card>

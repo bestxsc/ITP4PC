@@ -4,34 +4,47 @@
       <div>
         <p class="regp">欢迎加入我们</p>
         <hr>
-          <form [formGroup]="myForm" (ngSubmit)="onSubmit(myForm.value)" class="regform">
-            <div class="regd2">
-              <div class="regd3">
-                <div class="regd4">
-                  <label for="nameinput">昵称:</label>
-                </div>
-                <input nz-input type="text"  class="regipt" id="nameinput" placeholder="x-x个字符" [formControl]="myForm.controls['name']">
-              </div>
-              <div class="regd3">
-                <div class="regd4">
-                  <label for="pwdinput">密码:</label>
-                </div>
-                <input nz-input type="password"  class="regipt" id="pwdinput" placeholder="x-x位" [formControl]="myForm.controls['password']">
-              </div>
-              <div class="regd3"> 
-                <div class="regd4">
-                  <label for="repwdinput">确认密码:</label>
-                </div>
-                <input nz-input type="password"  class="regipt" id="repwdinput" placeholder="x-x位" [formControl]="myForm.controls['repassword']">
-              </div>
-              <div class="regd3">
-                <div class="regd4">
-                  <label for="mailinput">邮箱:</label>
-                </div>
-                <input nz-input type="text"  class="regipt" id="mailinput" placeholder="@" [formControl]="myForm.controls['mail']">
-              </div>
-            </div>
-            <button nz-button type="submit" class="regbtn btnsd">注册</button>
+          <form nz-form [formGroup]="regForm" (ngSubmit)="submitForm()">
+            <nz-form-item>
+              <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="email">电子邮箱</nz-form-label>
+              <nz-form-control [nzSm]="14" [nzXs]="24">
+                <input nz-input formControlName="email" id="email">
+                <nz-form-explain *ngIf="regForm.get('email').dirty && regForm.get('email').errors">这不是一个有效的电子邮箱!</nz-form-explain>
+              </nz-form-control>
+            </nz-form-item>
+            <nz-form-item>
+              <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="password" nzRequired>密码</nz-form-label>
+              <nz-form-control [nzSm]="14" [nzXs]="24">
+                <input nz-input type="password" id="password" formControlName="password" (ngModelChange)="updateConfirmValidator()">
+                <nz-form-explain *ngIf="regForm.get('password').dirty && regForm.get('password').errors">请输入您的密码!</nz-form-explain>
+              </nz-form-control>
+            </nz-form-item>
+            <nz-form-item>
+              <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="checkPassword" nzRequired>确认密码</nz-form-label>
+              <nz-form-control [nzSm]="14" [nzXs]="24">
+                <input nz-input type="password" formControlName="checkPassword" id="checkPassword">
+                <nz-form-explain *ngIf="regForm.get('checkPassword').dirty && regForm.get('checkPassword').errors">
+                  <ng-container *ngIf="regForm.get('checkPassword').hasError('required')">
+                    请确认您的密码!
+                  </ng-container>
+                  <ng-container *ngIf="regForm.get('checkPassword').hasError('confirm')">
+                    请检查密码是否一致!
+                  </ng-container>
+                </nz-form-explain>
+              </nz-form-control>
+            </nz-form-item>
+            <nz-form-item>
+              <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="userName" nzRequired>用户名</nz-form-label>
+              <nz-form-control [nzSm]="14" [nzXs]="24">
+                <input nz-input id="userName" formControlName="userName">
+                <nz-form-explain *ngIf="regForm.get('userName').dirty && regForm.get('userName').errors">请输入您的昵称!</nz-form-explain>
+              </nz-form-control>
+            </nz-form-item>
+            <nz-form-item nz-row class="nfi">
+              <nz-form-control [nzSpan]="14" [nzOffset]="6">
+                <button nz-button nzType="primary" nzBlock>加入我们！</button>
+              </nz-form-control>
+            </nz-form-item>
           </form>
         <hr>
       </div>

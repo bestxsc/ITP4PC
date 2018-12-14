@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -12,16 +12,20 @@ export class LoginComponent implements OnInit {
 
   constructor(fb:FormBuilder) { 
     this.LoginForm = fb.group({
-      'name':[''],
-      'password':['']
+      'userName':['',[ Validators.required ]],
+      'password':['',[ Validators.required ]],
+      remember: [ true ]
     })
   }
 
   ngOnInit() {
   }
 
-  onSubmit(value: string): void{
-    console.log('you submitted value:',value);
+  submitForm(): void{
+    for (const i in this.LoginForm.controls) {
+      this.LoginForm.controls[ i ].markAsDirty();
+      this.LoginForm.controls[ i ].updateValueAndValidity();
+    }
   }
 
 }
