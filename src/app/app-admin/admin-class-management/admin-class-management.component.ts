@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {NzModalService} from 'ng-zorro-antd';
 
 @Component({
   selector: 'app-admin-class-management',
@@ -24,7 +25,7 @@ export class AdminClassManagementComponent implements OnInit {
       width: 100%;
       border-top: 1px solid rgb(232, 232, 232);
       padding: 10px 16px;
-      text-align: right;
+      text-align: left;
       left: 0px;
       background: #fff;
     }
@@ -63,9 +64,8 @@ export class AdminDisplayClassComponent implements OnInit {
         href: '#',
         title: `班级 ${index} (page: ${pi})`,
         avatar: 'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png',
-        description: 'Ant Design, a design language for background applications, is refined by Ant UED Team.',
-        content: 'We supply a series of design principles, practical patterns and high ' +
-          'quality design resources (Sketch and Axure), to help people create their product prototypes beautifully and efficiently.'
+        description: '',
+        content: '班级描述'
       };
     });
   }
@@ -83,7 +83,7 @@ export class AdminDisplayClassComponent implements OnInit {
       width: 100%;
       border-top: 1px solid rgb(232, 232, 232);
       padding: 10px 16px;
-      text-align: right;
+      text-align: left;
       left: 0px;
       background: #fff;
     }
@@ -98,5 +98,76 @@ export class AdminClassInfoComponent {
 
   close(): void {
     this.visible = false;
+  }
+}
+
+
+// 发布公告按钮
+@Component({
+  selector: 'app-admin-announce',
+  template: `
+    <button nz-button nzType="primary" (click)="showModalMiddle()" style="margin-right: 8px;">
+      发布公告
+    </button>
+    <nz-modal nzWrapClassName="vertical-center-modal"
+              [(nzVisible)]="isVisibleMiddle"
+              nzTitle="公告内容"
+              (nzOnCancel)="handleCancelMiddle()"
+              (nzOnOk)="handleOkMiddle()">
+      <textarea rows="4" nz-input [(ngModel)]="inputValue"></textarea>
+    </nz-modal>
+  `,
+  styles: [ `
+    ::ng-deep .vertical-center-modal {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    ::ng-deep .vertical-center-modal .ant-modal {
+      top: 0;
+    }
+  ` ]
+})
+export class AdminClassAnnounceComponent {
+  inputValue: string;
+  isVisibleMiddle = false;
+  showModalMiddle(): void {
+    this.isVisibleMiddle = true;
+  }
+  handleOkMiddle(): void {
+    console.log('click ok');
+    this.isVisibleMiddle = false;
+  }
+  handleCancelMiddle(): void {
+    this.isVisibleMiddle = false;
+  }
+}
+
+// 解散班级按钮
+@Component({
+  selector: 'app-admin-class-breakup',
+  template: `
+    <button nz-button nzType="dashed" (click)="showDeleteConfirm()">解散班级</button>
+  `,
+  styles  : [
+    `button {
+      margin-right: 8px;
+    }`
+  ]
+})
+export class AdminBreakUpClassComponent {
+  constructor(private modalService: NzModalService) {
+  }
+
+  showDeleteConfirm(): void {
+    this.modalService.confirm({
+      nzTitle     : '你确定要解散班级吗?',
+      nzOkText    : 'Yes',
+      nzOkType    : 'danger',
+      nzOnOk      : () => console.log('确定'),
+      nzCancelText: 'No',
+      nzOnCancel  : () => console.log('取消')
+    });
   }
 }
