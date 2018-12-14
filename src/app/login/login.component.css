@@ -22,7 +22,7 @@ label,span{
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
     border-bottom-left-radius: 20px;
-    width: 40%;
+    width: 30%;
     margin:0 auto
 }
 
@@ -74,4 +74,19 @@ hr{
     
 }
 
+.login-form {
+    max-width: 300px;
+}
+
+.login-form-forgot {
+    float: right;
+}
+
+.login-form-button {
+    width: 100%;
+}
+
+span{
+    width: 70px;
+}
 

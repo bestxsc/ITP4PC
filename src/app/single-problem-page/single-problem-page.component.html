@@ -1,3 +1,44 @@
-<h1>
-  single-problem-page works!
-</h1>
+<div class="txd"> 
+    <div class="txd1" nz-row>
+      <div class="header2">
+        <h1>试卷Demo</h1>
+      </div>
+      <div class="nav-right-search right" nz-col [nzXs]="0" [nzSm]="0" [nzMd]="0" [nzLg]="4">
+        <button nz-button nzType="primary" nzSize="large" nzBlock>提交</button>
+      </div>
+    </div>
+    <nz-card style="width: 100%;">
+      <nz-card-tab>
+        <nz-tabset nzSize="large" [(nzSelectedIndex)]="index">
+          <nz-tab nzTitle="选择题"></nz-tab>
+          <nz-tab nzTitle="判断题"></nz-tab>
+          <nz-tab nzTitle="编程题"></nz-tab>
+        </nz-tabset>
+      </nz-card-tab>
+      <div *ngIf="index==0">
+        <div *ngFor="let selectProblem of selectProblems">
+          <app-single-select-question [question]="selectProblem.question" [answers]="selectProblem.answers"></app-single-select-question>
+        </div>
+      </div>
+      <div *ngIf="index==1">
+        <div *ngFor="let judgeProblem of judgeProblems">
+          <app-single-judge-question [question]="judgeProblem.question"></app-single-judge-question>
+        </div>
+      </div>
+      <div *ngIf="index==2">
+        <div *ngFor="let programProblem of programProblems">
+          <a href="{{ programProblem.href }}">
+            <nz-card [nzBordered]="true" [nzHoverable]="true">
+              <div class="txd2">
+                <h2>{{ programProblem.title }}</h2>
+                <p>{{ programProblem.content }}</p>
+              </div>
+              <div class="tag" nz-col>
+                <nz-tag [nzColor]="'#84B2B4'">{{programProblem.score}}分</nz-tag>
+              </div>
+            </nz-card>
+          </a>
+        </div>
+      </div>
+    </nz-card>
+  </div>

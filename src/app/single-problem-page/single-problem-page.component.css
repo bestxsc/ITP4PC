@@ -1,0 +1,55 @@
+
+.txd {
+    padding: 32px;
+    font-family: Roboto,"Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+    display: block;
+}
+
+.txd2{
+    float: left;
+}
+
+.ant-card-contain-tabs {
+    background-color: #fbfbfb;
+    box-shadow: 0 1px 4px 0 rgba(150, 155, 158, 0.37);
+}
+
+.ant-card-hoverable {
+    border: 0px;
+    margin-bottom: 5px;
+    background-color: #ffffff;
+    box-shadow: 0 1px 4px 0 rgba(150, 155, 158, 0.37);
+    color: black;
+    font-family: Roboto,"Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+    border: 1px solid transparent;
+}
+
+.ant-card-hoverable:hover{
+    box-shadow: 0 8px 8px rgba(1,67,163,.24), 0 0 8px rgba(1,67,163,.12), 0 6px 18px rgba(43,133,231,.12);
+    border-color: #2b85e7;
+    border-radius: 4px;
+    transform: translateY(-2px);
+  
+}
+
+.header2{
+    display: block;
+    top: -20px;
+    font-size: 1.5em;
+    float: left;
+}
+
+.nav-right-search {
+    float:right;
+    padding-top: 16px;
+}
+
+.tag{
+    float: right;
+}
+
+
+[nz-button] {
+    margin-right: 8px;
+    margin-bottom: 12px;
+}

@@ -22,12 +22,12 @@
     </nz-card-tab>
     <div class="txd2" *ngFor="let tArticle of TArticle">
       <div nz-col [nzSpan]="18">
-        <nz-card *ngIf="tArticle.state==index" [nzBordered]="true" [nzHoverable]="true">
-          <a href="{{ tArticle.href }}">
+        <a href="{{ tArticle.href }}">
+          <nz-card *ngIf="tArticle.state==index" [nzBordered]="true" [nzHoverable]="true">
             <h2>{{ tArticle.title }}</h2>
             <p>{{ tArticle.content }}</p>
-          </a>
-        </nz-card>
+          </nz-card>
+        </a>
       </div>
     </div>
   </nz-card>

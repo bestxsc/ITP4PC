@@ -22,7 +22,7 @@ label,span{
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
     border-bottom-left-radius: 20px;
-    width: 40%;
+    width: 30%;
     margin:0 auto
 }
 
@@ -66,4 +66,8 @@ hr{
     
 }
 
+.nfi{
+    margin-bottom:8px;
+    margin-top:35px;
+}
 

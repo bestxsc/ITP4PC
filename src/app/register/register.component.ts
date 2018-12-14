@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import {Component, OnInit} from '@angular/core';
+import {FormBuilder, FormGroup, AbstractControl, Validators, FormControl} from '@angular/forms';
 
 @Component({
   selector: 'app-register',
@@ -8,22 +8,39 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 })
 export class RegisterComponent implements OnInit {
 
-  myForm:FormGroup;
+  regForm: FormGroup;
 
-  constructor(fb:FormBuilder) {
-    this.myForm = fb.group({
-      'name':[''],
-      'password':[''],
-      'repassword':[''],
-      'mail':['']
-    })
+  constructor(fb: FormBuilder) {
+    this.regForm = fb.group({
+      'userName': ['', [Validators.required]],
+      'password': ['', [Validators.required]],
+      'checkPassword': ['', [Validators.required, this.confirmationValidator]],
+      'email': ['', [Validators.email, Validators.required]]
+    });
+
   }
+
   ngOnInit() {
   }
 
-
-  onSubmit(value: string): void{
-    console.log('you submitted value:',value);
-
+  submitForm(): void {
+    for (const i in this.regForm.controls) {
+      this.regForm.controls[i].markAsDirty();
+      this.regForm.controls[i].updateValueAndValidity();
+    }
   }
+
+  updateConfirmValidator(): void {
+    /** wait for refresh value */
+    Promise.resolve().then(() => this.regForm.controls.checkPassword.updateValueAndValidity());
+  }
+
+  confirmationValidator = (control: FormControl): { [s: string]: boolean } => {
+    if (!control.value) {
+      return {required: true};
+    } else if (control.value !== this.regForm.controls.password.value) {
+      return {confirm: true, error: true};
+    }
+  };
+
 }
