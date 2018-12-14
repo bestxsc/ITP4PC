@@ -1,0 +1,58 @@
+.content{
+  width: 90%;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.header{
+
+}
+
+.search-frame{
+  float: left;
+  width: 30%;
+}
+
+.app-button{
+  text-align: right;
+}
+
+.cards{
+  padding-bottom: 15px;
+}
+
+.card{
+  width: 100%;
+  padding-bottom: 5px;
+}
+
+.card :hover {
+  border-color: #2b85e7;
+}
+
+.show-card {
+  text-align: right;
+}
+
+.login-form {
+  max-width: 300px;
+}
+
+.login-form-forgot {
+  float: right;
+}
+
+.login-form-button {
+  width: 100%;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  border-top: 1px solid rgb(232, 232, 232);
+  padding: 10px 16px;
+  text-align: right;
+  left: 0px;
+  background: #fff;
+}

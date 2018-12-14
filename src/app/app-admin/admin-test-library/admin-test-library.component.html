@@ -1,53 +1,78 @@
-
-  <div class="content">
-    <div class="header">
-      <div class="search-frame">
-        <nz-input-group nzSearch [nzSuffix]="suffixIconButton">
-          <input type="text" nz-input placeholder="搜索...">
-        </nz-input-group>
-        <ng-template #suffixIconButton>
-          <button nz-button nzType="primary" nzSearch><i nz-icon type="search"></i></button>
-        </ng-template>
-      </div>
-      <div class="app-button">
-        <button nz-button nzType="primary" [nzSize]="size"><i nz-icon type="plus" theme="outline"></i>添加题目</button>
-      </div>
+<div class="content">
+  <div class="header">
+    <div class="search-frame">
+      <nz-input-group nzSearch [nzSuffix]="suffixIconButton">
+        <input type="text" nz-input placeholder="搜索题目名称...">
+      </nz-input-group>
+      <ng-template #suffixIconButton>
+        <button nz-button nzType="primary" nzSearch><i nz-icon type="search"></i></button>
+      </ng-template>
     </div>
-    <div>
-      <nz-divider nzDashed [nzText]="text">
-        <ng-template #text><i nz-icon type="align-center" theme="outline"></i>题目</ng-template>
-      </nz-divider>
-    </div>
-    <div class="cards">
-      <div class="card">
-        <nz-card nzTitle="第二道题" [nzExtra]="extraTemplate">
-          <p>小明和小红不啦不啦不啦不啦的反正就是不啦不啦不啦的</p>
-        </nz-card>
-        <ng-template #extraTemplate>
-          <button nz-button [nzSize]="size" nzType="default">编辑</button>
-          <button nz-button [nzSize]="size" nzType="danger">删除</button>
-        </ng-template>
-      </div>
-
-      <div class="card">
-        <nz-card nzTitle="第三道题" [nzExtra]="extraTemplate">
-          <p>小明和小红不啦不啦不啦不啦的反正就是不啦不啦不啦的</p>
-        </nz-card>
-        <ng-template #extraTemplate>
-          <button nz-button [nzSize]="size" nzType="default">编辑</button>
-          <button nz-button [nzSize]="size" nzType="danger">删除</button>
-        </ng-template>
-      </div>
-
-      <div class="card">
-        <nz-card nzTitle="第一道题" [nzExtra]="extraTemplate">
-          <p>小明和小红不啦不啦不啦不啦的反正就是不啦不啦不啦的</p>
-        </nz-card>
-        <ng-template #extraTemplate>
-          <button nz-button [nzSize]="size" nzType="default">编辑</button>
-          <button nz-button [nzSize]="size" nzType="danger">删除</button>
-        </ng-template>
-      </div>
+    <div class="app-button">
+      <button nz-button nzType="primary" [nzSize]="size" (click)="addSure()"><i nz-icon type="plus" theme="outline"></i>添加题目</button>
     </div>
   </div>
+  <div>
+    <nz-divider nzDashed [nzText]="text">
+      <ng-template #text><i nz-icon type="align-center" theme="outline"></i>题目</ng-template>
+    </nz-divider>
+  </div>
+  <div class="cards" *ngFor="let issue of issueSet">
+    <div class="card">
+      <nz-card nzTitle={{issue.title}} [nzExtra]="extraTemplate" [nzHoverable] = "true">
+        <p>题目编号：{{issue.id}}</p>
+        <p>题目内容：{{issue.content}}</p>
+        <p>题目类型：{{issue.type}}</p>
+        <p>发布时间：{{issue.time}}</p>
+        <div class="show-card">
+          <p><a [routerLink]="['issue']">查看详情</a></p>
+        </div>
+      </nz-card>
+      <ng-template #extraTemplate>
+        <button nz-button [nzSize]="size" nzType="default">编辑</button>
+        <button nz-button [nzSize]="size" nzType="danger"  (click)="deleteSure()">删除</button>
+      </ng-template>
+    </div>
+  </div>
+  <nz-pagination [nzPageIndex]="1" [nzTotal]="500"></nz-pagination>
 
+  <!--删除对话框-->
+  <nz-modal [(nzVisible)]="delVisible" nzTitle="删除" (nzOnCancel)="deleteCancel()" (nzOnOk)="handleOk()" [nzOkLoading]="delOkLoading">
+    <p>确定要删除吗？</p>
+  </nz-modal>
+
+  <!--添加题目对话框-->
+  <!--添加题目对话框-->
+  <nz-drawer [nzBodyStyle]="{ height: 'calc(100% - 55px)', overflow: 'auto', 'padding-bottom':'53px' }"[nzMaskClosable]="false" [nzWidth]="560" [nzVisible]="addVisible" nzTitle="Create" (nzOnClose)="addCancel()">
+    <form nz-form>
+      <nz-form-item>
+        <nz-form-label [nzSpan]="6">标题</nz-form-label>
+        <nz-form-control [nzSpan]="14">
+          <input nz-input placeholder="title" [(ngModel)]="title" name="title">
+        </nz-form-control>
+      </nz-form-item >
+      <nz-form-item>
+        <nz-form-label [nzSpan]="6">类型</nz-form-label>
+        <nz-form-control [nzSpan]="14">
+          <nz-select style="width: 120px;" [(ngModel)]="selectedValue" nzAllowClear nzPlaceHolder="Choose" name="type">
+            <nz-option nzValue="选择题" nzLabel="选择题"></nz-option>
+            <nz-option nzValue="填空题" nzLabel="填空题"></nz-option>
+            <nz-option nzValue="编程题" nzLabel="编程题"></nz-option>
+            <nz-option nzValue="其他" nzLabel="其他" nzDisabled></nz-option>
+          </nz-select>
+        </nz-form-control>
+      </nz-form-item >
+      <nz-form-item>
+        <nz-form-label [nzSpan]="6">题面</nz-form-label>
+        <nz-form-control [nzSpan]="14">
+          <textarea rows="4" nz-input [(ngModel)]="content" name="content"></textarea>
+        </nz-form-control>
+      </nz-form-item >
+    </form>
+    <div class="footer">
+      <button type="button" (click)="addCancel()" class="ant-btn" style="margin-right: 8px;"><span>关闭</span></button>
+      <button type="button" (click)="addCancel()" class="ant-btn ant-btn-primary"><span>提交</span></button>
+    </div>
+  </nz-drawer>
+
+</div>
