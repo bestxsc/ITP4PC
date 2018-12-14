@@ -4,13 +4,31 @@
       <div nz-col [nzLg]="6" [nzMd]="6" [nzSm]="8" [nzXs]="8" class="logo">
         <a [routerLink]="['home']"><img src="../assets/img/logo-nav.svg" class="logo-img"></a>
       </div>
-      <div nz-col [nzLg]="14" [nzMd]="0" [nzSm]="0" [nzXs]="0" class="left">
+      <div nz-col [nzLg]="14" [nzMd]="0" [nzSm]="0" [nzXs]="0">
         <ul nz-menu [nzMode]="'horizontal'" class="nav-menu">
           <li nz-menu-item><a [routerLink]="['problems']" class="item">卷库</a></li>
           <li nz-menu-item><a [routerLink]="['ranks']" class="item">排名</a></li>
           <li nz-menu-item><a [routerLink]="['text']" class="item">测试</a></li>
           <li nz-menu-item><a [routerLink]="['about']" class="item">关于</a></li>
           <li nz-menu-item><a [routerLink]="['admin-main-page']" class="item">go back end</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div nz-col [nzLg]="6" [nzMd]="4" [nzSm]="4" [nzXs]="2" [nzOffset]="6" class="right-navigation">
+    <div nz-row>
+      <div class="nav-right-icon" nz-col [nzXs]="2" [nzSm]="2" [nzMd]="1" [nzLg]="24">
+        <ul nz-menu [nzMode]="'horizontal'" class="nav-menu">
+          <li nz-menu-item>
+            <a title="登陆" [routerLink]="['login']" class="item">
+              登陆
+            </a>
+          </li>
+          <li nz-menu-item>
+            <a title="注册" [routerLink]="['register']" class="item">
+              注册
+            </a>
+          </li>
         </ul>
       </div>
     </div>

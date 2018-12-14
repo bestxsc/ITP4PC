@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, AbstractControl, Validators, FormControl } from '@angular/forms';
+import {Component, OnInit} from '@angular/core';
+import {FormBuilder, FormGroup, AbstractControl, Validators, FormControl} from '@angular/forms';
 
 @Component({
   selector: 'app-register',
@@ -8,15 +8,15 @@ import { FormBuilder, FormGroup, AbstractControl, Validators, FormControl } from
 })
 export class RegisterComponent implements OnInit {
 
-  regForm:FormGroup;
+  regForm: FormGroup;
 
-  constructor(fb:FormBuilder) {
+  constructor(fb: FormBuilder) {
     this.regForm = fb.group({
-      'userName':['', [ Validators.required ]],
-      'password':['', [ Validators.required ]],
-      'checkPassword':['',[ Validators.required, this.confirmationValidator ]],
-      'email':['',[ Validators.email, Validators.required ]]
-    })
+      'userName': ['', [Validators.required]],
+      'password': ['', [Validators.required]],
+      'checkPassword': ['', [Validators.required, this.confirmationValidator]],
+      'email': ['', [Validators.email, Validators.required]]
+    });
 
   }
 
@@ -25,8 +25,8 @@ export class RegisterComponent implements OnInit {
 
   submitForm(): void {
     for (const i in this.regForm.controls) {
-      this.regForm.controls[ i ].markAsDirty();
-      this.regForm.controls[ i ].updateValueAndValidity();
+      this.regForm.controls[i].markAsDirty();
+      this.regForm.controls[i].updateValueAndValidity();
     }
   }
 
@@ -35,11 +35,11 @@ export class RegisterComponent implements OnInit {
     Promise.resolve().then(() => this.regForm.controls.checkPassword.updateValueAndValidity());
   }
 
-  confirmationValidator = (control: FormControl): { [ s: string ]: boolean } => {
+  confirmationValidator = (control: FormControl): { [s: string]: boolean } => {
     if (!control.value) {
-      return { required: true };
+      return {required: true};
     } else if (control.value !== this.regForm.controls.password.value) {
-      return { confirm: true, error: true };
+      return {confirm: true, error: true};
     }
   };
 
