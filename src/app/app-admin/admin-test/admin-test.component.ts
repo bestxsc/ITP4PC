@@ -55,7 +55,7 @@ export class AdminTestComponent implements OnInit {
 })
 export class AdminTestListComponent implements OnInit {
 
-  issueSet = [
+  testSet = [
     {
       id: 1,
       title   :  'PAT乙级',
@@ -86,6 +86,8 @@ export class AdminTestListComponent implements OnInit {
   /*删除对话框属性*/
   delVisible = false;
   delOkLoading = false;
+  /*编辑题目对话框属性*/
+  editVisible = false;
 
   /*
   打开删除确定对话框
@@ -112,9 +114,50 @@ export class AdminTestListComponent implements OnInit {
     this.delVisible = false;
   }
 
-  edit(): void {
-    window.location.assign("[\'admin-test-library\']");
+  /*
+  打开编辑确定对话框
+  */
+  editSure(): void {
+    this.editVisible = true;
   }
+
+  /*
+  关闭编辑确定对话框
+  */
+  editCancel(): void {
+    this.editVisible = false;
+  }
+
+  issueSet = [
+    {
+      id: 1,
+      title   :  '第一道题',
+      content :  '小明和小红不啦不啦不啦不啦的反正就是不啦不啦不啦的',
+      type    :  '选择题',
+      time    :  '2018年12月5日19点01分'
+    },
+    {
+      id: 2,
+      title   :  '第二道题',
+      content :  '小明和小红不啦不啦不啦不啦的反正就是不啦不啦不啦的',
+      type    :  '判断题',
+      time    :  '2018年12月5日19点02分'
+    },
+    {
+      id: 3,
+      title   :  '第三道题',
+      content :  '小明和小红不啦不啦不啦不啦的反正就是不啦不啦不啦的',
+      type    :  '选择题',
+      time    :  '2018年12月5日19点03分'
+    },
+    {
+      id: 4,
+      title   :  '第四道题',
+      content :  '小明和小红不啦不啦不啦不啦的反正就是不啦不啦不啦的',
+      type    :  '编程题',
+      time    :  '2018年12月5日19点04分'
+    }
+  ];
 
   constructor() { }
 
