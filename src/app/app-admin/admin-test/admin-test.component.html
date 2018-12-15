@@ -17,58 +17,41 @@
       <ng-template #text><i nz-icon type="align-center" theme="outline"></i>测试集</ng-template>
     </nz-divider>
   </div>
-  <div class="cards" *ngFor="let issue of issueSet">
-    <div class="card">
-      <nz-card nzTitle={{issue.title}} [nzExtra]="extraTemplate" [nzHoverable] = "true">
-        <p>测试编号：{{issue.id}}</p>
-        <p>测试内容：{{issue.content}}</p>
-        <p>测试难度：{{issue.diff}}</p>
-        <p>发布人：{{issue.person}}</p>
-        <p>发布时间：{{issue.time}}</p>
-        <div class="show-card">
-          <p><a [routerLink]="['paper']">试卷详情</a></p>
-        </div>
-      </nz-card>
-      <ng-template #extraTemplate>
-        <button nz-button [nzSize]="size" nzType="default">编辑</button>
-        <button nz-button [nzSize]="size" nzType="danger"  (click)="deleteSure()">删除</button>
-      </ng-template>
-    </div>
-  </div>
 
-  <nz-pagination [nzPageIndex]="1" [nzTotal]="500"></nz-pagination>
+  <router-outlet></router-outlet>
 
-  <!--删除对话框-->
-  <nz-modal [(nzVisible)]="delVisible" nzTitle="删除" (nzOnCancel)="deleteCancel()" (nzOnOk)="handleOk()" [nzOkLoading]="delOkLoading">
-    <p>确定要删除吗？</p>
-  </nz-modal>
-
-  <!--添加题目对话框-->
-  <nz-drawer [nzBodyStyle]="{ height: 'calc(100% - 55px)', overflow: 'auto', 'padding-bottom':'53px' }"[nzMaskClosable]="false" [nzWidth]="560" [nzVisible]="addVisible" nzTitle="Create" (nzOnClose)="addCancel()">
+  <!--添加测试对话框-->
+  <nz-drawer [nzBodyStyle]="{ height: 'calc(100% - 55px)', overflow: 'auto', 'padding-bottom':'53px' }"[nzMaskClosable]="false" [nzWidth]="720" [nzVisible]="addVisible" nzTitle="Create" (nzOnClose)="addCancel()">
     <form nz-form>
       <nz-form-item>
-        <nz-form-label [nzSpan]="6">标题</nz-form-label>
+        <nz-form-label [nzSpan]="6">测试名称</nz-form-label>
         <nz-form-control [nzSpan]="14">
           <input nz-input placeholder="title" [(ngModel)]="title" name="title">
         </nz-form-control>
       </nz-form-item >
       <nz-form-item>
-        <nz-form-label [nzSpan]="6">类型</nz-form-label>
+        <nz-form-label [nzSpan]="6">测试难度</nz-form-label>
         <nz-form-control [nzSpan]="14">
           <nz-select style="width: 120px;" [(ngModel)]="selectedValue" nzAllowClear nzPlaceHolder="Choose" name="type">
-            <nz-option nzValue="选择题" nzLabel="选择题"></nz-option>
-            <nz-option nzValue="填空题" nzLabel="填空题"></nz-option>
-            <nz-option nzValue="编程题" nzLabel="编程题"></nz-option>
+            <nz-option nzValue="简单" nzLabel="简单"></nz-option>
+            <nz-option nzValue="中等" nzLabel="中等"></nz-option>
+            <nz-option nzValue="困难" nzLabel="困难"></nz-option>
             <nz-option nzValue="其他" nzLabel="其他" nzDisabled></nz-option>
           </nz-select>
         </nz-form-control>
       </nz-form-item >
       <nz-form-item>
-        <nz-form-label [nzSpan]="6">题面</nz-form-label>
+        <nz-form-label [nzSpan]="6">测试描述</nz-form-label>
         <nz-form-control [nzSpan]="14">
-          <textarea rows="4" nz-input [(ngModel)]="content" name="content"></textarea>
+          <textarea rows="4" nz-input name="content"></textarea>
         </nz-form-control>
       </nz-form-item >
+      <nz-form-item>
+        <nz-form-label [nzSpan]="6">起止时间</nz-form-label>
+        <nz-form-control>
+          <nz-range-picker></nz-range-picker>
+        </nz-form-control>
+      </nz-form-item>
     </form>
     <div class="footer">
       <button type="button" (click)="addCancel()" class="ant-btn" style="margin-right: 8px;"><span>关闭</span></button>

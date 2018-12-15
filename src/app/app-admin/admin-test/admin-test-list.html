@@ -1,0 +1,24 @@
+<div class="cards" *ngFor="let issue of issueSet">
+  <div class="card">
+    <nz-card nzTitle={{issue.title}} [nzExtra]="extraTemplate" [nzHoverable] = "true">
+      <p>测试编号：{{issue.id}}</p>
+      <p>测试内容：{{issue.content}}</p>
+      <p>测试难度：{{issue.diff}}</p>
+      <p>发布人：{{issue.person}}</p>
+      <p>发布时间：{{issue.time}}</p>
+      <div class="show-card">
+        <p><a href="['sproblem']">试卷详情</a></p>
+      </div>
+    </nz-card>
+    <ng-template #extraTemplate>
+      <button nz-button [nzSize]="size" nzType="default" (click)="edit()">编辑</button>
+      <button nz-button [nzSize]="size" nzType="danger"  (click)="deleteSure()">删除</button>
+    </ng-template>
+  </div>
+</div>
+<nz-pagination [nzPageIndex]="1" [nzTotal]="500"></nz-pagination>
+
+<!--删除对话框-->
+<nz-modal [(nzVisible)]="delVisible" nzTitle="删除" (nzOnCancel)="deleteCancel()" (nzOnOk)="handleOk()" [nzOkLoading]="delOkLoading">
+  <p>确定要删除吗？</p>
+</nz-modal>

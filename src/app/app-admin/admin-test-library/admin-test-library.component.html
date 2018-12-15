@@ -65,7 +65,13 @@
       <nz-form-item>
         <nz-form-label [nzSpan]="6">题面</nz-form-label>
         <nz-form-control [nzSpan]="14">
-          <textarea rows="4" nz-input [(ngModel)]="content" name="content"></textarea>
+          <textarea rows="4" nz-input name="content"></textarea>
+        </nz-form-control>
+      </nz-form-item >
+      <nz-form-item>
+        <nz-form-label [nzSpan]="6">答案</nz-form-label>
+        <nz-form-control [nzSpan]="14">
+          <textarea rows="4" nz-input name="answer"></textarea>
         </nz-form-control>
       </nz-form-item >
     </form>

@@ -6,17 +6,54 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./admin-test.component.css']
 })
 export class AdminTestComponent implements OnInit {
-
-  size = 'large';
-  /*删除对话框属性*/
-  delVisible = false;
-  delOkLoading = false;
   /*添加对话框属性*/
   addVisible = false;
   addOkLoading = false;
   title: string;
   selectedValue = '选择题';
   content = '选择题';
+
+  constructor() { }
+
+  ngOnInit() {
+  }
+
+  /*
+  打开添加对话框
+  */
+  addSure(): void {
+    this.addVisible = true;
+  }
+
+  /*
+  添加提交
+  */
+  addHandle(): void {
+    this.addOkLoading = true;
+    window.setTimeout(() => {
+      this.addVisible = false;
+      this.addOkLoading = false;
+    }, 3000);
+  }
+
+  /*
+  关闭删除确定对话框
+  */
+  addCancel(): void {
+    this.addVisible = false;
+  }
+
+}
+
+/*
+测试列表界面
+*/
+@Component({
+  selector: 'app-admin-test-list',
+  templateUrl: './admin-test-list.html',
+  styleUrls: ['./admin-test.component.css']
+})
+export class AdminTestListComponent implements OnInit {
 
   issueSet = [
     {
@@ -45,10 +82,10 @@ export class AdminTestComponent implements OnInit {
     }
   ];
 
-  constructor() { }
-
-  ngOnInit() {
-  }
+  size = 'large';
+  /*删除对话框属性*/
+  delVisible = false;
+  delOkLoading = false;
 
   /*
   打开删除确定对话框
@@ -75,29 +112,27 @@ export class AdminTestComponent implements OnInit {
     this.delVisible = false;
   }
 
-  /*
-  打开添加对话框
-  */
-  addSure(): void {
-    this.addVisible = true;
+  edit(): void {
+    window.location.assign("[\'admin-test-library\']");
   }
 
-  /*
-  添加提交
-  */
-  addHandle(): void {
-    this.addOkLoading = true;
-    window.setTimeout(() => {
-      this.addVisible = false;
-      this.addOkLoading = false;
-    }, 3000);
-  }
+  constructor() { }
 
-  /*
-  关闭删除确定对话框
-  */
-  addCancel(): void {
-    this.addVisible = false;
+  ngOnInit() {
   }
+}
 
+/*
+测试详情界面
+*/
+@Component({
+  selector: 'app-admin-test-detail',
+  templateUrl: './admin-test-detail.html',
+  styleUrls: ['./admin-test.component.css']
+})
+export class AdminTestDetailComponent implements OnInit {
+  constructor() { }
+
+  ngOnInit() {
+  }
 }
