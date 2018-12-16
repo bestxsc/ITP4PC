@@ -31,7 +31,7 @@ export class RegisterComponent implements OnInit {
   }
 
   updateConfirmValidator(): void {
-    /** wait for refresh value */
+    /** 实时刷新 */
     Promise.resolve().then(() => this.regForm.controls.checkPassword.updateValueAndValidity());
   }
 
