@@ -1,0 +1,40 @@
+.txd {
+    padding: 32px;
+    font-family: Roboto,"Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+    display: block;
+    background-color: white;
+}
+
+.txd2{
+    padding: 30px;
+}
+
+.txd3{
+    float: right;
+}
+
+.txd4{
+    padding-top:30px;
+}
+
+.txd5{
+    padding-bottom: 10px;
+}
+
+nz-breadcrumb-item:last-child {
+    color: rgb(231, 23, 23);
+}
+
+.ipt{
+    box-shadow: 0 1px 4px 0 rgba(9, 13, 16, 0.32);
+    background-color: #fbfbfb;
+}
+
+.nzi{
+    font-size: 30px;
+    float: left;
+}
+
+.title{
+    float: left;
+}

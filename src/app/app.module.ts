@@ -37,6 +37,7 @@ import {AdminBreakUpClassComponent} from './app-admin/admin-class-management/adm
 import { TextPageComponent } from './text-page/text-page.component';
 import { SingleSelectQuestionComponent } from './single-select-question/single-select-question.component';
 import { SingleJudgeQuestionComponent } from './single-judge-question/single-judge-question.component';
+import { SingleProgramQuestionComponent } from './single-program-question/single-program-question.component';
 
 registerLocaleData(zh);
 
@@ -51,6 +52,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent},
   { path: 'text', component: TextPageComponent},
   { path: 'sproblem', component: SingleProblemPageComponent},
+  { path: 'sprogram', component: SingleProgramQuestionComponent},
 
 
   // admin
@@ -105,6 +107,7 @@ const routes: Routes = [
     TextPageComponent,
     SingleSelectQuestionComponent,
     SingleJudgeQuestionComponent,
+    SingleProgramQuestionComponent,
   ],
   imports: [
     BrowserModule,

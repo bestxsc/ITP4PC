@@ -1,8 +1,3 @@
-label,span{
-    width:120px;
-    display:inline-block;
- }
-
 .logd{
 
     box-sizing: border-box;
@@ -26,26 +21,6 @@ label,span{
     margin:0 auto
 }
 
-.logd2{
-    padding-right: 3rem;
-}
-.logd3{
-    display: flex;
-    padding-bottom: 1.5rem;
-    padding-top: 1.5rem;
-}
-
-.logd4{
-    text-align: right;
-    margin-right: 1.5rem;
-    display: inline;
-    font-size: 1.25rem;
-}
-
-.logd5{
-    display: flex;
-    padding-top: 1.5rem;
-}
 .logp{
     font-size: 1.5rem;
 }
@@ -84,9 +59,5 @@ hr{
 
 .login-form-button {
     width: 100%;
-}
-
-span{
-    width: 70px;
 }
 

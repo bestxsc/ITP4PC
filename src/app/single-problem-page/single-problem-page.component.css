@@ -41,7 +41,8 @@
 
 .nav-right-search {
     float:right;
-    padding-top: 16px;
+    padding-top: 20px;
+    padding-right: 20px;
 }
 
 .tag{
