@@ -28,17 +28,15 @@ import {AdminPersonalDataComponent} from './app-admin/admin-personal-data/admin-
 import {AdminPersonalComponent} from './app-admin/admin-personal-data/admin-personal-data.component';
 import {AdminPersonalSafeComponent} from './app-admin/admin-personal-data/admin-personal-data.component';
 import {AdminClassManagementComponent} from './app-admin/admin-class-management/admin-class-management.component';
-import {AdminTestComponent} from './app-admin/admin-test/admin-test.component';
+import {AdminTestComponent, AdminTestDetailComponent, AdminTestListComponent} from './app-admin/admin-test/admin-test.component';
 import {AdminCreateClassComponent} from './app-admin/admin-class-management/admin-class-management.component';
-
 import {AdminDisplayClassComponent} from './app-admin/admin-class-management/admin-class-management.component';
 import {AdminClassInfoComponent} from './app-admin/admin-class-management/admin-class-management.component';
-
+import {AdminClassAnnounceComponent} from './app-admin/admin-class-management/admin-class-management.component';
+import {AdminBreakUpClassComponent} from './app-admin/admin-class-management/admin-class-management.component';
 import { TextPageComponent } from './text-page/text-page.component';
 import { SingleSelectQuestionComponent } from './single-select-question/single-select-question.component';
 import { SingleJudgeQuestionComponent } from './single-judge-question/single-judge-question.component';
-
-
 
 registerLocaleData(zh);
 
@@ -61,14 +59,18 @@ const routes: Routes = [
       {path: 'admin-class-management', component: AdminClassManagementComponent, children: [
           {path: 'admin-create-class', component: AdminCreateClassComponent},
         ]},
-      {path: 'admin-test', component: AdminTestComponent},
+      {path: 'admin-test', component: AdminTestComponent , children:[
+          {path: '', redirectTo: 'list', pathMatch: 'full'},
+          {path: 'list', component: AdminTestListComponent},
+          {path: 'detail', component: AdminTestDetailComponent}
+        ]},
       {path: 'admin-personal-data', component: AdminPersonalDataComponent, children: [
+          {path: '', redirectTo: 'admin-personal-data-1', pathMatch: 'full'},
           {path: 'admin-personal-data-1', component: AdminPersonalComponent},
           {path: 'admin-personal-data-2', component: AdminPersonalSafeComponent}
         ]},
     ]
   }
-
 
 ];
 
@@ -83,9 +85,8 @@ const routes: Routes = [
     FooterComponent,
     RegisterComponent,
     RankPageComponent,
+
     AdminComponent,
-
-
     AdminMainPageComponent,
     AdminTestLibraryComponent,
     AdminPersonalDataComponent,
@@ -93,15 +94,17 @@ const routes: Routes = [
     AdminPersonalSafeComponent,
     AdminClassManagementComponent,
     AdminTestComponent,
+    AdminTestListComponent,
+    AdminTestDetailComponent,
     AdminCreateClassComponent,
     AdminDisplayClassComponent,
     AdminClassInfoComponent,
+    AdminClassAnnounceComponent,
+    AdminBreakUpClassComponent,
     LoginComponent,
     TextPageComponent,
     SingleSelectQuestionComponent,
     SingleJudgeQuestionComponent,
-
-
   ],
   imports: [
     BrowserModule,

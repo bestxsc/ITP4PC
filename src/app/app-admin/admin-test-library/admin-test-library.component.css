@@ -2,7 +2,6 @@
   width: 90%;
   margin-left: 5%;
   margin-right: 5%;
-  padding-top: 2%;
 }
 
 .header{
@@ -19,11 +18,10 @@
 }
 
 .cards{
-
+  padding-bottom: 15px;
 }
 
 .card{
   width: 100%;
-  padding-top: 5px;
   padding-bottom: 5px;
 }

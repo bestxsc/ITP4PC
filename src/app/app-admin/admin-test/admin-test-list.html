@@ -1,0 +1,48 @@
+<div class="cards" *ngFor="let issue of testSet">
+  <div class="card">
+    <nz-card nzTitle={{issue.title}} [nzExtra]="extraTemplate" [nzHoverable] = "true">
+      <p>测试编号：{{issue.id}}</p>
+      <p>测试内容：{{issue.content}}</p>
+      <p>测试难度：{{issue.diff}}</p>
+      <p>发布人：{{issue.person}}</p>
+      <p>发布时间：{{issue.time}}</p>
+      <div class="show-card">
+        <p><a href="['sproblem']">试卷详情</a></p>
+      </div>
+    </nz-card>
+    <ng-template #extraTemplate>
+      <button nz-button [nzSize]="size" nzType="default" (click)="editSure()">编辑</button>
+      <button nz-button [nzSize]="size" nzType="danger"  (click)="deleteSure()">删除</button>
+    </ng-template>
+  </div>
+</div>
+<nz-pagination [nzPageIndex]="1" [nzTotal]="500"></nz-pagination>
+
+<!--删除对话框-->
+<nz-modal [(nzVisible)]="delVisible" nzTitle="删除" (nzOnCancel)="deleteCancel()" (nzOnOk)="handleOk()" [nzOkLoading]="delOkLoading">
+  <p>确定要删除吗？</p>
+</nz-modal>
+
+<nz-drawer [nzClosable]="false" [nzVisible]="editVisible" nzPlacement="right" nzTitle="题目选择" [nzWidth]="720" (nzOnClose)="editCancel()">
+  <nz-table>
+    <thead>
+    <tr>
+      <th>题目编号</th>
+      <th>题目标题</th>
+      <th>题目类型</th>
+      <th>发布时间</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let issue of issueSet">
+      <td>{{issue.id}}</td>
+      <td>{{issue.title}}</td>
+      <td>{{issue.type}}</td>
+      <td>{{issue.time}}}</td>
+      <td>
+        <nz-divider nzType="vertical"></nz-divider>
+      </td>
+    </tr>
+    </tbody>
+  </nz-table>
+</nz-drawer>

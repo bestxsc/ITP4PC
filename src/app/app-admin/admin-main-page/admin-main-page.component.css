@@ -1,1 +1,5 @@
 a{ text-decoration:none}
+
+.ant-layout.ant-layout-has-sider > .ant-layout, .ant-layout.ant-layout-has-sider > .ant-layout-content {
+  overflow: hidden;
+}
