@@ -35,6 +35,18 @@ nz-breadcrumb-item:last-child {
     float: left;
 }
 
+.nzi1{
+    font-size: 20px;
+    padding-right: 10px;
+}
 .title{
     float: left;
+}
+
+.slt{
+    width: 200px;
+}
+
+.ant-input-prefix{
+    top: 15px;
 }

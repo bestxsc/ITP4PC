@@ -17,10 +17,10 @@
         <h2 class="title">英寸与厘米的交互</h2>
       </div>
       <div nz-col nzSpan="16">
-        <textarea nz-input nzAutosize [(ngModel)]="value" class="ipt"></textarea>
+        <textarea nz-input [nzAutosize]="true" [(ngModel)]="value" class="ipt"></textarea>
       </div>
       <div nz-col nzSpan="4" class="txd3">
-        <textarea nz-input nzAutosize [(ngModel)]="limit" class="ipt"></textarea>
+        <textarea nz-input [nzAutosize]="true" [(ngModel)]="limit" class="ipt"></textarea>
         <nz-affix>
           <div class="txd4">
             <button nz-button nzBlock [nzType]="'primary'">
@@ -30,6 +30,11 @@
         </nz-affix>
       </div>
       <div nz-col nzSpan="16" class="txd4">
+        <i nz-icon type="edit" theme="outline" class="nzi1"></i>
+        <nz-select nzShowSearch nzAllowClear nzPlaceHolder="请选择编译器" [(ngModel)]="selectedValue" class="slt">
+          <nz-option *ngFor="let compiler of compilers" nzLabel="{{compiler.lable}}" nzValue="{{compiler.value}}">
+          </nz-option>
+        </nz-select>
         <textarea nz-input [(ngModel)]="answer" rows="10" class="ipt"></textarea>
       </div>
     </div>
