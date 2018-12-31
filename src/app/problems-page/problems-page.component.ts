@@ -12,7 +12,6 @@ export class ProblemsPageComponent implements OnInit {
     new Article('树形结构模拟卷1',
       '作者：XXX 难度：4',
       'sproblem',
-      ghjhgjgjhgkjgkjgkhkjgkjgghjgkjhg
       '100')
   ];
   hgfjghfjhgfhjgfhgjfghfjfh
