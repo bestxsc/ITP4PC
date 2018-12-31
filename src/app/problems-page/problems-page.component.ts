@@ -15,10 +15,11 @@ export class ProblemsPageComponent implements OnInit {
       ghjhgjgjhgkjgkjgkhkjgkjgghjgkjhg
       '100')
   ];
+  hgfjghfjhgfhjgfhgjfghfjfh
   Articles02: Article [] = [
     new Article('图形结构模拟卷1',
       '作者：XXX 难度：4',
-      'sproblem',
+      'sproblasdfasdfasdfsdfasfem',
       '75'),
   ];
   Articles03: Article [] = [
